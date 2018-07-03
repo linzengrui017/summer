@@ -1,9 +1,6 @@
 package cn.zerry.framework;
 
-import cn.zerry.framework.helper.BeanHelper;
-import cn.zerry.framework.helper.ClassHelper;
-import cn.zerry.framework.helper.ControllerHelper;
-import cn.zerry.framework.helper.IocHelper;
+import cn.zerry.framework.helper.*;
 import cn.zerry.framework.util.ClassUtil;
 
 /**
@@ -13,7 +10,7 @@ import cn.zerry.framework.util.ClassUtil;
  */
 public class HelperLoader {
     public static void init(){
-        Class<?>[] classList = {ClassHelper.class, BeanHelper.class, IocHelper.class, ControllerHelper.class};
+        Class<?>[] classList = {ClassHelper.class, BeanHelper.class, AopHelper.class, IocHelper.class, ControllerHelper.class};
         for (Class<?> cls : classList){
             ClassUtil.loadClass(cls.getName(), true);
         }

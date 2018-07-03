@@ -45,4 +45,12 @@ public final class BeanHelper {
 
     //inversion of control
     //dependency inject
+
+    /**
+     * 设置Bean实例
+     */
+    public static void setBean(Class<?> cls, Object obj){
+        BEAN_MAP.put(cls, obj);
+    }
+
 }
