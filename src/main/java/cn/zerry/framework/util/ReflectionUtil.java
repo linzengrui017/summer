@@ -42,6 +42,18 @@ public final class ReflectionUtil {
         return result;
     }
 
+    public static Object invokeMethod(Object obj, Method method){
+        Object result;
+        try {
+            method.setAccessible(true);
+            result = method.invoke(obj);
+        }catch (Exception e){
+            LOGGER.error("invoke method failure", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
     /**
      * 设置成员变量的值
      */
